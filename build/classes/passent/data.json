@@ -1,0 +1,72 @@
+[{
+        "r1": "CH3O",
+        "r2": "CH3O",
+        "r3": "Cl2C=CHO",
+        "x": "O",
+        "output": "yes"
+    }
+    , {
+        "r1": "C2H5O",
+        "r2": "C2H5O",
+        "r3": "Cl2C=CHO",
+        "x": "O",
+        "output": "yes"
+    }
+    , {
+        "r1": "n-C3H7O",
+        "r2": "n-C3H7O",
+        "r3": "Cl2C=CHO",
+        "x": "O",
+        "output": "yes"
+    }
+    , {
+        "r1": "n-C5H11O",
+        "r2": "n-C5H11O",
+        "r3": "Cl2C=CHO",
+        "x": "O",
+        "output": "yes"
+    }
+    , {
+        "r1": "ClC2H4O",
+        "r2": "Cl2H4O",
+        "r3": "Cl2C=CHO",
+        "x": "O",
+        "output": "yes"
+    }
+    , {
+        "r1": "ClC2H4O",
+        "r2": "CH3O",
+        "r3": "Cl2C=CHO",
+        "x": "O",
+        "output": "yes"
+    }
+    , {
+        "r1": "CH3O",
+        "r2": "CH3O",
+        "r3": "ClC=CHO",
+        "x": "O",
+        "output": "yes"
+    }
+    , {
+        "r1": "C2H5O",
+        "r2": "C2H5O",
+        "r3": "ClC=CHO",
+        "x": "O",
+        "output": "yes"
+    }
+    , {
+        "r1": "CH3O",
+        "r2": "CH3O",
+        "r3": "ClC2H4O",
+        "x": "O",
+        "output": "no"
+    }
+    , {
+        "r1": "C2H5O",
+        "r2": "C2H5O",
+        "r3": "ClC2H4O",
+        "x": "O",
+        "output": "no"
+    }
+
+]
