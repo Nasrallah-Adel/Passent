@@ -6,6 +6,7 @@
 package passent;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,13 +18,14 @@ public class main extends javax.swing.JFrame {
      * Creates new form main
      */
     getdata g;
-    
+
     public main() {
         initComponents();
         g = new getdata();
-        jList1.setVisible(false);
-        jList2.setVisible(false);
-        jList3.setVisible(false);
+        this.setVisible(true);
+        this.setResizable(false);
+        this.setLocationRelativeTo(null);
+
     }
 
     /**
@@ -60,6 +62,12 @@ public class main extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        r2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                r2KeyReleased(evt);
+            }
+        });
         jPanel1.add(r2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 100, 30));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
@@ -68,9 +76,14 @@ public class main extends javax.swing.JFrame {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, -1, -1));
 
         output.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
-        output.setForeground(new java.awt.Color(0, 0, 0));
-        output.setText("OPIDN : ");
-        jPanel1.add(output, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, -1, -1));
+        output.setForeground(new java.awt.Color(102, 0, 0));
+        jPanel1.add(output, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 430, 170, 50));
+
+        x.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                xKeyReleased(evt);
+            }
+        });
         jPanel1.add(x, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 220, 100, 30));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
@@ -89,6 +102,12 @@ public class main extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("R3");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, -1, -1));
+
+        r3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                r3KeyReleased(evt);
+            }
+        });
         jPanel1.add(r3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 100, 30));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
@@ -104,39 +123,68 @@ public class main extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(60, 65, 112));
         jButton1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jButton1.setText("Result");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 410, 140, 60));
 
+        jList1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = {  };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList1MouseClicked(evt);
+            }
         });
         jScrollPane1.setViewportView(jList1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 100, 80));
 
+        jList2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = {  };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList2MouseClicked(evt);
+            }
         });
         jScrollPane2.setViewportView(jList2);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 100, 80));
 
+        jList3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = {  };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jList3MouseClicked(evt);
+            }
         });
         jScrollPane3.setViewportView(jList3);
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 100, 80));
 
+        jList4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jList4.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = {  };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
+        });
+        jList4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jList4KeyPressed(evt);
+            }
         });
         jScrollPane4.setViewportView(jList4);
 
@@ -169,6 +217,96 @@ public class main extends javax.swing.JFrame {
         }
         jList1.setModel(m1);
     }//GEN-LAST:event_r1KeyReleased
+
+    private void r2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r2KeyReleased
+        DefaultListModel m1 = new DefaultListModel();
+        String s = r2.getText().toLowerCase();
+        for (int i = 0; i < g.data.length; i++) {
+            if (g.data[i][1].toLowerCase().contains(s)) {
+                m1.addElement(g.data[i][1]);
+            }
+        }
+        jList2.setModel(m1);    }//GEN-LAST:event_r2KeyReleased
+
+    private void r3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r3KeyReleased
+        DefaultListModel m1 = new DefaultListModel();
+        String s = r3.getText().toLowerCase();
+        for (int i = 0; i < g.data.length; i++) {
+            if (g.data[i][2].toLowerCase().contains(s)) {
+                m1.addElement(g.data[i][2]);
+            }
+        }
+        jList3.setModel(m1);    }//GEN-LAST:event_r3KeyReleased
+
+    private void xKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_xKeyReleased
+        DefaultListModel m1 = new DefaultListModel();
+        String s = x.getText().toLowerCase();
+        for (int i = 0; i < g.data.length; i++) {
+            if (g.data[i][3].toLowerCase().contains(s)) {
+                m1.addElement(g.data[i][3]);
+            }
+        }
+        jList4.setModel(m1);    }//GEN-LAST:event_xKeyReleased
+
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
+        String s = jList1.getSelectedValue().toString();
+        r1.setText(s);
+    }//GEN-LAST:event_jList1MouseClicked
+
+    private void jList2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList2MouseClicked
+        String s = jList2.getSelectedValue().toString();
+        r2.setText(s);    }//GEN-LAST:event_jList2MouseClicked
+
+    private void jList3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList3MouseClicked
+        String s = jList3.getSelectedValue().toString();
+        r3.setText(s);
+    }//GEN-LAST:event_jList3MouseClicked
+
+    private void jList4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jList4KeyPressed
+        String s = jList4.getSelectedValue().toString();
+        x.setText(s);    }//GEN-LAST:event_jList4KeyPressed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        String R[] = new String[4];
+        String Output = "";
+        int flag = 0;
+        R[0] = r1.getText().toLowerCase().toString();
+        R[1] = r2.getText().toLowerCase().toString();
+        R[2] = r3.getText().toLowerCase().toString();
+        R[3] = x.getText().toLowerCase().toString();
+        int i = 0;
+        int j = 0;
+        for (; i < g.data.length; i++) {
+            for (j = 0; j < 4; j++) {
+                if (R[j].equals(g.data[i][j].toLowerCase())) {
+                    flag++;
+
+                }
+            }
+            if (flag == 4) {
+                break;
+            } else {
+                flag = 0;
+            }
+        }
+
+        if (flag == 4) {
+            output.setText(g.data[i][4]);
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "This Compination not exist yet");
+            DefaultListModel m1 = new DefaultListModel();
+            r1.setText("");
+            r2.setText("");
+            r3.setText("");
+            x.setText("");
+            output.setText("");
+            jList1.setModel(m1);
+            jList2.setModel(m1);
+            jList3.setModel(m1);
+            jList4.setModel(m1);
+
+        }
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
